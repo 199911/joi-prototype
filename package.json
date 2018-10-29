@@ -1,0 +1,13 @@
+{
+  "name": "joi-prototype",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@sunday:199911/joi-prototype.git",
+  "author": "KU Lok Sun <sundaykuloksun@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "joi": "^14.0.1",
+    "mocha": "^5.2.0"
+  }
+}
