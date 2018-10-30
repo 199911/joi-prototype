@@ -1,7 +1,9 @@
 const Joi = require('joi');
 
 // Run the test 1 million times
-const iterations = 1000000;
+const ITERATIONS = 1000000;
+
+console.log(`${ITERATIONS} iterations`);
 
 const rawObjectSchema = {
   a: Joi.string()
@@ -12,13 +14,13 @@ const joiObjectSchema = Joi.object().keys({
 });
 
 console.time('Raw object schema');
-for (var i = 0; i < iterations; i++) {
+for (var i = 0; i < ITERATIONS; i++) {
   Joi.validate({ a: 'a string' }, rawObjectSchema);
 }
 console.timeEnd('Raw object schema');
 
 console.time('JOI object schema');
-for (var i = 0; i < iterations; i++) {
+for (var i = 0; i < ITERATIONS; i++) {
   Joi.validate({ a: 'a string' }, joiObjectSchema);
 }
 console.timeEnd('JOI object schema');
@@ -33,13 +35,13 @@ const joiArraySchema = Joi.array().items(
 );
 
 console.time('Raw array schema');
-for (var i = 0; i < iterations; i++) {
+for (var i = 0; i < ITERATIONS; i++) {
   Joi.validate([ 'a string' ], rawArraySchema);
 }
 console.timeEnd('Raw array schema');
 
 console.time('JOI array schema');
-for (var i = 0; i < iterations; i++) {
+for (var i = 0; i < ITERATIONS; i++) {
   Joi.validate([ 'a string' ], joiArraySchema);
 }
 console.timeEnd('JOI array schema');
